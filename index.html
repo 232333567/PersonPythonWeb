@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>我的编程作品</title>
+<style>
+body{font-family:微软雅黑,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;}
+h1{text-align:center;color:#222;font-size:50px;}
+.item{padding:18px 0;border-bottom:1px solid #ddd;font-size:26px;}
+a{color:#0066cc;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.admin{margin-top:50px;text-align:center;}
+.admin a{color:#222;font-weight:bold;font-size:28px;}
+</style>
+</head>
+<body>
+
+<h1>我的编程作品</h1>
+<div id="tool-list"></div>
+<div class="admin"><a href="admin.html">管理员上传入口</a></div>
+
+<script src="config.js"></script>
+<script>
+const list = document.getElementById('tool-list');
+toolConfig.forEach(item => {
+  const div = document.createElement('div');
+  div.className = 'item';
+  const a = document.createElement('a');
+  a.href = 'files/' + item.file;
+  a.textContent = item.name;
+  div.appendChild(a);
+  list.appendChild(div);
+});
+</script>
+
+</body>
+</html>
